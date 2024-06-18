@@ -1,6 +1,6 @@
-﻿using DependenceInjection.Domain.Contracts;
+﻿using Core.Domain.Contracts;
 
-namespace DependenceInjection.App.Services;
+namespace Core.Services;
 
 public class SingletonService : ISingletonService
 {

@@ -1,7 +1,4 @@
 using DependenceInjection.App;
-using DependenceInjection.App.Services;
-using DependenceInjection.Controllers;
-using DependenceInjection.Domain.Contracts;
 using Microsoft.OpenApi.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -14,10 +11,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddScoped<IScopedService, ScopedService>();
-builder.Services.AddTransient<ITransientService, TransientService>();
-builder.Services.AddSingleton<ISingletonService, SingletonService>();
-builder.Services.AddScoped<ITestService, TestHandler>();
+builder.Services.AddClassesMatchingInterfaces(nameof(Core));
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1", new OpenApiInfo { Title = "Product", Version = "v1" });

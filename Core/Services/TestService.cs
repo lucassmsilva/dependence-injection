@@ -1,13 +1,15 @@
-﻿using DependenceInjection.Domain.Contracts;
+﻿
 
-namespace DependenceInjection.App;
+using Core.Domain.Contracts;
 
-public class TestHandler : ITestService
+namespace Core.Services;
+
+public class TestService : ITestService
 {
     private readonly IScopedService _scoped;
     private readonly ITransientService _transient;
 
-    public TestHandler(IScopedService scoped, ITransientService transient)
+    public TestService(IScopedService scoped, ITransientService transient)
     {
         _scoped = scoped;
         _transient = transient;

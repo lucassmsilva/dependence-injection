@@ -1,5 +1,4 @@
-﻿using DependenceInjection.App;
-using DependenceInjection.Domain.Contracts;
+﻿using Core.Domain.Contracts;
 using Microsoft.AspNetCore.Mvc;
 
 namespace DependenceInjection.Controllers;
